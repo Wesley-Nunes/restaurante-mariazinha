@@ -1,0 +1,37 @@
+{
+  "name": "restaurante-mariazinha",
+  "description": "Site do restaurante mariazinha",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Wesley-Nunes/restaurante-mariazinha.git",
+  "author": "@Wesley-Nunes <wesnmonteiro@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next lint && next dev -H 0.0.0.0",
+    "build": "next build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^6",
+    "next": "^12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@shopify/eslint-plugin": "^41.2.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.22",
+    "@types/react": "^17.0.41",
+    "eslint": "^8.11.0",
+    "eslint-config-next": "^12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
+  }
+}
