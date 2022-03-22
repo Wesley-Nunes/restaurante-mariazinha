@@ -1,10 +1,16 @@
 {
   "name": "restaurante-mariazinha",
+  "description": "Site do restaurante mariazinha",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Wesley-Nunes/restaurante-mariazinha.git",
-  "author": "Wesley-Nunes <wesnmonteiro@gmail.com>",
+  "author": "@Wesley-Nunes <wesnmonteiro@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "next lint && next dev -H 0.0.0.0",
+    "build": "next build",
+    "test": "jest"
+  },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11",
