@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Text } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
-import { primaryColor } from '../../constants/colors'
 import { brandImgLink } from '../../constants/img-url'
 import { brandName } from '../../constants/names'
 
@@ -29,7 +28,7 @@ const Logo = (): JSX.Element => (
   <Link href='/menu' passHref scroll={false}>
     <LogoBox>
       <Image src={brandImgLink} width={48} height={48} alt='logo' />
-      <Text color={primaryColor} fontWeight='bold'>
+      <Text color='primary.livelyYellow' fontWeight='bold'>
         {brandName}
       </Text>
     </LogoBox>

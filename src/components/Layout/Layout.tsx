@@ -2,11 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
 
-import Navbar from '../Navbar/Navbar'
 import { brandImgLink } from '../../constants/img-url'
 import { brandName } from '../../constants/names'
+import Navbar from '../Navbar/Navbar'
 
-const Layout = ({ children, router }): JSX.Element => (
+const Layout = ({ children }): JSX.Element => (
   <Box as='main'>
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -15,7 +15,7 @@ const Layout = ({ children, router }): JSX.Element => (
       <meta name='author' content='Wesley Nunes' />
       <title>{brandName}</title>
     </Head>
-    <Navbar path={router} />
+    <Navbar />
     <Container>{children}</Container>
   </Box>
 )
