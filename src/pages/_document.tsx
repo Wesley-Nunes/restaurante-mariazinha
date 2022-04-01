@@ -6,7 +6,7 @@ import theme from '../global/styles/theme'
 
 export default function Document() {
   return (
-    <Html lang='pt_BR'>
+    <Html lang='pt-BR'>
       <Head />
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
