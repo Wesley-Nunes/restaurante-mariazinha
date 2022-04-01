@@ -2,30 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Text } from '@chakra-ui/react'
-import styled from '@emotion/styled'
 
 import { brandImgLink } from '../../constants/img-url'
 import { brandName } from '../../constants/names'
 
-const LogoBox = styled.span`
-  height: 4rem;
-
-  display: inline-flex;
-  align-items: center;
-
-  font-size: 1.1rem;
-  font-weight: bold;
-
-  img {
-    transition: 300ms ease;
-  }
-  &:hover img {
-    transform: rotate(-15deg);
-  }
-`
+import LogoBox from './Logo.style'
 
 const Logo = (): JSX.Element => (
-  <Link href='/menu' passHref scroll={false}>
+  <Link href='/menu' passHref>
     <LogoBox>
       <Image src={brandImgLink} width={48} height={48} alt='logo' />
       <Text color='primary.livelyYellow' fontWeight='bold'>
