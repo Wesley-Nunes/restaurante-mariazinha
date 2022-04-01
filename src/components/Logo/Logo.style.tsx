@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const LogoBox = styled.a`
+const LogoBox = styled.span`
   height: 4rem;
 
   display: inline-flex;

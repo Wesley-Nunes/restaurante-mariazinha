@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import NextLink from 'next/link'
-import { useRouter } from 'next/router'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Box,
   Flex,
   Heading,
   Stack,
-  Link,
   Container,
   Menu,
   MenuButton,
   IconButton,
   MenuList,
   MenuItem,
-  useMediaQuery
+  useMediaQuery,
+  Text
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
 
+import LinkItem from '../LinkItem/LinkItem'
 import Logo from '../Logo/Logo'
 
 const navbarItems = [
@@ -25,35 +24,16 @@ const navbarItems = [
   { href: '/sobre-nos', name: 'Sobre Nós' }
 ]
 
-const LinkItem = ({ href, children }): JSX.Element => {
-  const router = useRouter()
-  const active = router.asPath === href
-  const bgColor = active ? 'primary.livelyYellow' : 'secondary.sanguineBrown'
-  const fontColor = active ? 'secondary.sanguineBrown' : 'primary.livelyYellow'
-
-  return (
-    <NextLink href={href} passHref>
-      <Link
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
-        minW='24'
-        minH='8'
-        bg={bgColor}
-        color={fontColor}
-        fontWeight='bold'
-      >
-        {children}
-      </Link>
-    </NextLink>
-  )
+const itemsColors = {
+  primary: 'secondary.sanguineBrown',
+  secondary: 'primary.livelyYellow'
 }
 
 const LargerScreenItems = (): JSX.Element => (
   <Stack display='flex' direction='row' alignItems='center' flexGrow='1'>
     {navbarItems.map(({ href, name }) => (
-      <LinkItem key={name} href={href}>
-        {name}
+      <LinkItem key={name} href={href} colors={itemsColors}>
+        <Text>{name}</Text>
       </LinkItem>
     ))}
   </Stack>
@@ -64,7 +44,7 @@ const SmallerScreenItems = (): JSX.Element => (
     <MenuButton as={IconButton} icon={<HamburgerIcon />} />
     <MenuList>
       {navbarItems.map(({ href, name }) => (
-        <LinkItem key={name} href={href}>
+        <LinkItem key={name} href={href} colors={itemsColors}>
           <MenuItem>{name}</MenuItem>
         </LinkItem>
       ))}
@@ -72,7 +52,7 @@ const SmallerScreenItems = (): JSX.Element => (
   </Menu>
 )
 
-const NavItems = (): JSX.Element => {
+const ContainerNavbarItems = (): JSX.Element => {
   const [isMinWidthMedium, setIsMinWidthMedium] = useState(true)
   const [mediaQuery] = useMediaQuery('(min-width: 768px)')
 
@@ -85,25 +65,23 @@ const NavItems = (): JSX.Element => {
   return isMinWidthMedium ? <LargerScreenItems /> : <SmallerScreenItems />
 }
 
-const Navbar = (): JSX.Element => {
-  return (
-    <Box as='nav' w='100%' bg='background.cocoaBrown' position='fixed'>
-      <Container
-        display='flex'
-        maxW='container.md'
-        alignItems='center'
-        justifyContent='center'
-        flexWrap='wrap'
-      >
-        <Flex align='center' justify='center' columnGap='4'>
-          <Heading as='h1' size='lg' letterSpacing='widest'>
-            <Logo />
-          </Heading>
-          <NavItems />
-        </Flex>
-      </Container>
-    </Box>
-  )
-}
+const Navbar = (): JSX.Element => (
+  <Box as='nav' w='100%' bg='background.cocoaBrown' position='fixed'>
+    <Container
+      display='flex'
+      maxW='container.md'
+      alignItems='center'
+      justifyContent='center'
+      flexWrap='wrap'
+    >
+      <Flex align='center' justify='center' columnGap='4'>
+        <Heading as='h1' size='lg' letterSpacing='widest'>
+          <Logo />
+        </Heading>
+        <ContainerNavbarItems />
+      </Flex>
+    </Container>
+  </Box>
+)
 
 export default Navbar

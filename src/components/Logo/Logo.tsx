@@ -1,22 +1,22 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { Text } from '@chakra-ui/react'
 
 import { brandImgLink } from '../../constants/img-url'
 import { brandName } from '../../constants/names'
+import LinkItem from '../LinkItem/LinkItem'
 
 import LogoBox from './Logo.style'
 
 const Logo = (): JSX.Element => (
-  <Link href='/menu' passHref>
+  <LinkItem href='/menu'>
     <LogoBox>
       <Image src={brandImgLink} width={48} height={48} alt='logo' />
       <Text color='primary.livelyYellow' fontWeight='bold'>
         {brandName}
       </Text>
     </LogoBox>
-  </Link>
+  </LinkItem>
 )
 
 export default Logo
