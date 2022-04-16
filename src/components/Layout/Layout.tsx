@@ -16,7 +16,9 @@ const Layout = ({ children }): JSX.Element => (
       <title>{brandName}</title>
     </Head>
     <Navbar />
-    <Container>{children}</Container>
+    <Container w='100%' maxW='container.md' pt='16'>
+      {children}
+    </Container>
   </Box>
 )
 
