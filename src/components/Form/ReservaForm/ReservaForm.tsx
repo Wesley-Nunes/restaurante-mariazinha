@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Formik } from 'formik'
-import { Button, Flex, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, useDisclosure } from '@chakra-ui/react'
 import * as Yup from 'yup'
 
 import FormValues from '../../../interfaces/FormValues'
@@ -54,7 +54,18 @@ const ReservaForm = (): JSX.Element => {
   const btnName = 'Faça Sua Reserva'
 
   return (
-    <>
+    <Box
+      display='flex'
+      flexDirection='column'
+      alignItems='center'
+      justifyContent='center'
+      width='96%'
+      h='96%'
+      m='4'
+      bg='background.darkBrown'
+      rowGap='6'
+    >
+      <Heading>{title}</Heading>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -82,7 +93,7 @@ const ReservaForm = (): JSX.Element => {
         values={formValue}
         disclosureValues={disclosureValues}
       />
-    </>
+    </Box>
   )
 }
 
