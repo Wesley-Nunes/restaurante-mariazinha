@@ -6,6 +6,7 @@ import * as Yup from 'yup'
 import FormValues from '../../../interfaces/FormValues'
 import FieldForm from '../FieldForm/FieldForm'
 import ModalForm from '../ModalForm/ModalForm'
+import FormikProps from '../../../interfaces/FormikProps'
 
 const formFieldItems = [
   { id: 'firstName', type: 'text', labelText: 'Digite Seu Nome' },
@@ -71,7 +72,12 @@ const ReservaForm = (): JSX.Element => {
         onSubmit={handleSubmit}
         validationSchema={ReservaSchema}
       >
-        {props => (
+        {({
+          errors,
+          touched,
+          handleChange,
+          values
+        }: FormikProps<FormValues>) => (
           <Form title={title}>
             <Flex flexDirection='column' rowGap='6'>
               {formFieldItems.map(({ id, type, labelText }) => (
@@ -80,7 +86,7 @@ const ReservaForm = (): JSX.Element => {
                   id={id}
                   type={type}
                   labelText={labelText}
-                  formikProps={props}
+                  formikProps={{ errors, touched, handleChange, values }}
                 />
               ))}
               <Button type='submit'>{btnName}</Button>

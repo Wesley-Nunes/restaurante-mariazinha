@@ -7,7 +7,9 @@ import {
   Input
 } from '@chakra-ui/react'
 
-const FieldForm = ({ id, type, labelText, formikProps }) => {
+import FieldForm from '../../../interfaces/FieldForm'
+
+const FieldForm = ({ id, type, labelText, formikProps }: FieldForm) => {
   const { errors, touched, handleChange, values } = formikProps
   const errorMessage =
     errors[id] && touched[id] ? <Text color='red'>{errors[id]}</Text> : null
