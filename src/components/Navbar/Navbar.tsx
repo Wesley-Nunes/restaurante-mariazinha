@@ -74,7 +74,7 @@ const Navbar = (): JSX.Element => (
       justifyContent='center'
       flexWrap='wrap'
     >
-      <Flex align='center' justify='center' columnGap='4'>
+      <Flex width='100%' align='center' justify='space-between'>
         <Heading as='h1' size='lg' letterSpacing='widest'>
           <Logo />
         </Heading>
