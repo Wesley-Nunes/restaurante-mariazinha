@@ -27,7 +27,15 @@ const RecipeItems: RecipeInterface[] = [
 ]
 
 const RecipeWrapper = (): JSX.Element => (
-  <Flex direction='row' wrap='wrap' gap='3' w='container.md' mt='8'>
+  <Flex
+    direction='row'
+    align='center'
+    justify='center'
+    wrap='wrap'
+    gap='3'
+    maxW='container.md'
+    mt='8'
+  >
     {RecipeItems.map(({ imgSrc, title, description }) => (
       <Recipe
         key={title}
