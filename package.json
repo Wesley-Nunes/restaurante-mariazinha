@@ -9,8 +9,9 @@
   "scripts": {
     "dev": "next lint && next dev -H 0.0.0.0",
     "build": "next build",
-    "test": "jest --watch --verbose",
-    "ci-test": "jest"
+    "ci-test": "jest",
+    "test:unit": "jest --watch --verbose",
+    "test:e2e": "./node_modules/.bin/cypress run --headed --browser chrome"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -31,6 +32,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.22",
     "@types/react": "^17.0.41",
+    "cypress": "^9.6.0",
     "eslint": "^8.11.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.5.0",
