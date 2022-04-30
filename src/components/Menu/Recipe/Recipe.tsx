@@ -23,7 +23,7 @@ const Recipe = ({ imgSrc, title, description }: Recipe): JSX.Element => (
         height={192}
         layout='fixed'
         objectFit='cover'
-        alt={`Icon of ${title} recipe`}
+        alt={`Ícone da receita ${title}`}
       />
     </Box>
     <Heading as='h3'>{title}</Heading>
