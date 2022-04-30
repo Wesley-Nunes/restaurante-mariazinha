@@ -18,6 +18,7 @@ const Recipe = ({ imgSrc, title, description }: Recipe): JSX.Element => (
   >
     <Box width='192' height='192' borderRadius='full' overflow='clip'>
       <Image
+        priority
         src={imgSrc}
         width={192}
         height={192}
