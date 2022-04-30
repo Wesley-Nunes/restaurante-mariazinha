@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import dynamic from 'next/dynamic'
 import { Form, Formik } from 'formik'
 import { Box, Button, Flex, Heading, useDisclosure } from '@chakra-ui/react'
 import * as Yup from 'yup'
 
 import FormValues from '../../../interfaces/FormValues'
 import FieldForm from '../FieldForm/FieldForm'
-import ModalForm from '../ModalForm/ModalForm'
 import FormikProps from '../../../interfaces/FormikProps'
+
+const ModalForm = dynamic(import('../ModalForm/ModalForm'))
 
 const formFieldItems = [
   { id: 'firstName', type: 'text', labelText: 'Digite Seu Nome' },

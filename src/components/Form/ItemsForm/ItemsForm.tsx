@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
+import dynamic from 'next/dynamic'
 
-import ReservaForm from '../ReservaForm/ReservaForm'
-import ImageForm from '../ImageForm/ImageForm'
+const ReservaForm = dynamic(import('../ReservaForm/ReservaForm'))
+const ImageForm = dynamic(import('../ImageForm/ImageForm'))
 
 const ItemsForm = (): JSX.Element => {
   const [isMinWidthMedium, setIsMinWidthMedium] = useState(true)
