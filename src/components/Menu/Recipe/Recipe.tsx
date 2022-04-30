@@ -27,7 +27,7 @@ const Recipe = ({ imgSrc, title, description }: Recipe): JSX.Element => (
       />
     </Box>
     <Heading as='h3'>{title}</Heading>
-    <Container h='40%'>
+    <Container h='40%' data-testid='description'>
       <Text fontSize='xl' align='center'>
         {description[0]}
       </Text>
